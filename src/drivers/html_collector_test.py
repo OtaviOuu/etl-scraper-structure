@@ -9,5 +9,8 @@ def test_collect_essentials():
     essentials_information = html_collector.collect_essentials(
         http_request_response["html"]
     )
-    print()
-    print(essentials_information)
+
+    assert isinstance(essentials_information, list)
+    assert isinstance(essentials_information[0], dict)
+    assert "name" in essentials_information[0]
+    assert "link" in essentials_information[0]
